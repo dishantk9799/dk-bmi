@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dk-bmi-calculator</title>
+    <link rel="shortcut icon" href="./assets/svg/bmi.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background -->
+    <div class="bg-grid"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div id="particles"></div>
+
+    <!-- main -->
+    <main>
+        <h1 class="main-title">BMI Calculator</h1>
+
+        <!-- Calculate BMI -->
+        <div class="container">
+            <div class="card">
+                <h2>Calculate BMI</h2>
+                <input type="text" id="name" placeholder="Enter your name">
+                <div class="toggle">
+                    <button id="metricBtn" class="active">cm / kg</button>
+                    <button id="imperialBtn">feet / lbs</button>
+                </div>
+                <input type="number" id="height" placeholder="Height (cm)">
+                <input type="number" id="weight" placeholder="Weight (kg)">
+                <button id="calculateBtn">Calculate</button>
+                <button id="resetBtn">Reset</button>
+                <div id="result"></div>
+            </div>
+
+            <!-- BMI Categories -->
+            <div class="card">
+                <h2>BMI Categories</h2>
+
+                <table>
+                    <tr>
+                        <th>BMI Range</th>
+                        <th>Category</th>
+                    </tr>
+                    <tr class="underweight">
+                        <td>Below 18.5</td>
+                        <td>Underweight</td>
+                    </tr>
+                    <tr class="normal">
+                        <td>18.5-24.9</td>
+                        <td>Normal weight</td>
+                    </tr>
+                    <tr class="overweight">
+                        <td>25-29.9</td>
+                        <td>Overweight</td>
+                    </tr>
+                    <tr class="obese">
+                        <td>30 and above</td>
+                        <td>Obese</td>
+                    </tr>
+                </table>
+
+                <h2 style="margin-top:20px;">History</h2>
+                <ul id="history"></ul>
+            </div>
+
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

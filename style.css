@@ -1,0 +1,218 @@
+:root {
+    --bg: #0a0a0a;
+    --bg-secondary: #141414;
+    --fg: #ffffff;
+    --accent: #e5e5e5;
+    --border: rgba(255, 255, 255, 0.08);
+    --underweight: #60a5fa;
+    --normal: #4ade80;
+    --overweight: #fbbf24;
+    --obese: #f87171;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: var(--bg);
+    color: var(--fg);
+}
+
+.bg-grid {
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridMove 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(60px, 60px);
+    }
+}
+
+.glow-orb {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.15;
+    pointer-events: none;
+    animation: orbFloat 15s ease-in-out infinite;
+}
+
+.glow-orb-1 {
+    background: rgba(255, 255, 255, 0.3);
+    top: -200px;
+    right: -200px;
+}
+
+.glow-orb-2 {
+    background: rgba(255, 255, 255, 0.15);
+    bottom: -300px;
+    left: -200px;
+    animation-delay: -7s;
+}
+
+@keyframes orbFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(30px, 30px) scale(1.1);
+    }
+}
+
+main {
+    padding: 40px;
+}
+
+.main-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 380px;
+    height: fit-content;
+    border: 1px solid var(--border);
+    padding: 25px;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+
+.toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.toggle button {
+    width: 50%;
+}
+
+.active {
+    background: var(--bg-secondary);
+    color: var(--accent);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--bg-secondary);
+    border-bottom: 1px solid white;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid var(--bg-secondary);
+    background: var(--accent);
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--bg-secondary);
+    color: var(--accent);
+}
+
+#result {
+    margin-top: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+}
+
+th {
+    background: var(--bg);
+    color: var(--accent);
+    font-weight: 500;
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 10px;
+    text-align: left;
+}
+
+
+tr.underweight td:last-child {
+    color: var(--underweight);
+    font-weight: 500;
+}
+
+tr.normal td:last-child {
+    color: var(--normal);
+    font-weight: 500;
+}
+
+tr.overweight td:last-child {
+    color: var(--overweight);
+    font-weight: 500;
+}
+
+tr.obese td:last-child {
+    color: var(--obese);
+    font-weight: 500;
+}
+
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+
+.bmi-underweight {
+    color: var(--underweight);
+}
+
+.bmi-normal {
+    color: var(--normal);
+}
+
+.bmi-overweight {
+    color: var(--overweight);
+}
+
+.bmi-obese {
+    color: var(--obese);
+}
