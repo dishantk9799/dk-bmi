@@ -10,6 +10,7 @@ let calculateBtn = document.getElementById("calculateBtn");
 let resetBtn = document.getElementById("resetBtn");
 let metricBtn = document.getElementById("metricBtn");
 let imperialBtn = document.getElementById("imperialBtn");
+let clearHistoryBtn = document.getElementById("clearHistoryBtn");
 
 // Default unit
 let unit = "metric";
@@ -147,3 +148,10 @@ function showHistory() {
         historyList.appendChild(li);
     });
 }
+
+
+// CLEAR HISTORY
+clearHistoryBtn.addEventListener("click", function () {
+    localStorage.removeItem("bmiHistory");
+    historyList.innerHTML = "";
+});

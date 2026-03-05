@@ -216,3 +216,22 @@ tr:hover {
 .bmi-obese {
     color: var(--obese);
 }
+
+
+.history {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#clearHistoryBtn {
+    width: auto;
+    padding: 6px 12px;
+    background: #b91c1c;
+    color: white;
+}
+
+#clearHistoryBtn:hover {
+    background: #b60a0a;
+}
